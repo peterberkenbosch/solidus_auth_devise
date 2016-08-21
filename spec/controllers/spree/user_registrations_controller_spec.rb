@@ -13,10 +13,12 @@ RSpec.describe Spree::UserRegistrationsController, type: :controller do
 
     subject do
       post(:create,
-        spree_user: {
-          email: 'foobar@example.com',
-          password: 'foobar123',
-          password_confirmation: password_confirmation
+        params: {
+          spree_user: {
+            email: 'foobar@example.com',
+            password: 'foobar123',
+            password_confirmation: password_confirmation
+          }
         })
     end
 

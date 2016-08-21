@@ -9,9 +9,11 @@ RSpec.describe Spree::UserSessionsController, type: :controller do
 
     subject do
       post(:create,
-        spree_user: {
-          email: user.email,
-          password: password
+        params: {
+          spree_user: {
+            email: user.email,
+            password: password
+          }
         },
         format: format)
     end
