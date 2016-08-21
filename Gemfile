@@ -8,6 +8,7 @@ gem 'mysql2'
 
 group :development, :test do
   gem "pry-rails"
+  gem "rails-controller-testing"
 end
 
 gemspec
