@@ -9,6 +9,7 @@ Spree::CheckoutController.class_eval do
   end
 
   def update_registration
+    return unless params[:order]
     if params[:order][:email] =~ Devise.email_regexp && current_order.update_attribute(:email, params[:order][:email])
       redirect_to spree.checkout_path
     else
